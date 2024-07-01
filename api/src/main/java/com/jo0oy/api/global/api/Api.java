@@ -1,7 +1,8 @@
-package com.jo0oy.j_cafe_siren_order.global.api;
+package com.jo0oy.api.global.api;
 
-import com.jo0oy.j_cafe_siren_order.global.error.ErrorCode;
-import com.jo0oy.j_cafe_siren_order.global.error.ErrorCodeIfs;
+
+import com.jo0oy.api.global.error.ErrorCode;
+import com.jo0oy.api.global.error.ErrorCodeIfs;
 import lombok.Builder;
 import lombok.Getter;
 

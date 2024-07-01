@@ -1,4 +1,4 @@
-package com.jo0oy.j_cafe_siren_order.global.annotation;
+package com.jo0oy.api.global.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Service;

@@ -4,51 +4,16 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.5'
 }
 
-group = 'com.jo0oy'
-version = '0.0.1-SNAPSHOT'
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+allprojects {
+	repositories {
+		mavenCentral()
 	}
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+bootJar {
+	enabled = false
 }
 
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	// spring web
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-
-	// jpa
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-	// mysql connector
-	runtimeOnly 'com.mysql:mysql-connector-j'
-
-	// lombok
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-
-	// junit
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-	// yml
-	implementation 'org.yaml:snakeyaml:+'
-
-	// dotenv-java
-	implementation 'io.github.cdimascio:java-dotenv:+'
-
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
+jar {
+	enabled = false
 }

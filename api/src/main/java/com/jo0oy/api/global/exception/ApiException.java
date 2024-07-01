@@ -1,6 +1,6 @@
-package com.jo0oy.j_cafe_siren_order.global.exception;
+package com.jo0oy.api.global.exception;
 
-import com.jo0oy.j_cafe_siren_order.global.error.ErrorCodeIfs;
+import com.jo0oy.api.global.error.ErrorCodeIfs;
 import lombok.Getter;
 
 @Getter

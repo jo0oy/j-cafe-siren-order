@@ -37,7 +37,7 @@ out/
 .vscode/
 
 ### ENV File ###
-.env
+docker-compose/.env
 
 ### db/data Dir ###
-db/data/
+docker-compose/db/data/

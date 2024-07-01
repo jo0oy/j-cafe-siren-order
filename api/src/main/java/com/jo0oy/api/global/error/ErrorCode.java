@@ -1,4 +1,4 @@
-package com.jo0oy.j_cafe_siren_order.global.error;
+package com.jo0oy.api.global.error;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

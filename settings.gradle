@@ -1,1 +1,3 @@
 rootProject.name = 'j-cafe-siren-order'
+include 'api'
+include 'db'
