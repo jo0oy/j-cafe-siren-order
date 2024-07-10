@@ -45,6 +45,9 @@ dependencies {
 
     // dotenv-java
     implementation 'io.github.cdimascio:java-dotenv:+'
+
+    // springdoc
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
 }
 
 test {
