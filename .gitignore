@@ -38,6 +38,8 @@ out/
 
 ### ENV File ###
 docker-compose/.env
+api/.env
+.env
 
 ### db/data Dir ###
 docker-compose/db/data/
