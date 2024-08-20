@@ -5,7 +5,7 @@ import com.jo0oy.api.global.error.ErrorCode;
 import com.jo0oy.api.global.exception.ApiException;
 import com.jo0oy.api.user.dto.request.UserRequest;
 import com.jo0oy.api.user.dto.response.UserResponse;
-import com.jo0oy.db.user.UserEntity;
+import com.jo0oy.db.user.jpa.UserEntity;
 
 import java.util.Optional;
 

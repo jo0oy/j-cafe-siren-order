@@ -2,8 +2,8 @@ package com.jo0oy.api.user.service;
 
 import com.jo0oy.api.global.error.UserErrorCode;
 import com.jo0oy.api.global.exception.ApiException;
-import com.jo0oy.db.user.UserEntity;
-import com.jo0oy.db.user.UserRepository;
+import com.jo0oy.db.user.jpa.UserEntity;
+import com.jo0oy.db.user.jpa.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
