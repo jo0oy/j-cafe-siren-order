@@ -1,4 +1,4 @@
-package com.jo0oy.db.user;
+package com.jo0oy.db.user.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
