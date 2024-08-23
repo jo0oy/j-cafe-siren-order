@@ -7,6 +7,9 @@ import com.jo0oy.api.menu.dto.response.MenuResponse;
 import com.jo0oy.api.menu.service.MenuService;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Business
 public class MenuBusiness {
@@ -22,6 +25,13 @@ public class MenuBusiness {
     public MenuResponse getMenuById(String menuId) {
         var menuEntity = menuService.findById(menuId);
         return menuConverter.toResponse(menuEntity);
+    }
+
+    public List<MenuResponse> getMenuList() {
+        return menuService.findAll()
+            .stream()
+            .map(menuConverter::toResponse)
+            .collect(Collectors.toList());
     }
 
     public MenuResponse update(String menuId, MenuRequest request) {

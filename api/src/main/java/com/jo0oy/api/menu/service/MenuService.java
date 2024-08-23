@@ -7,6 +7,8 @@ import com.jo0oy.db.menu.mongo.MenuRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class MenuService {
@@ -22,6 +24,10 @@ public class MenuService {
             .orElseThrow(
                 () -> new ApiException(MenuErrorCode.MENU_NOT_FOUND)
             );
+    }
+
+    public List<MenuEntity> findAll() {
+        return menuRepository.findAll();
     }
 
     public MenuEntity update(MenuEntity menuEntity) {

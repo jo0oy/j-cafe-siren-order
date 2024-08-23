@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @RequestMapping("/open-api/menus")
 @RestController
@@ -22,6 +24,17 @@ public class MenuOpenApiController {
         @PathVariable("menuId") String menuId
     ) {
         var data = menuBusiness.getMenuById(menuId);
+
+        return ResponseEntity
+            .ok()
+            .body(
+                Api.OK(data)
+            );
+    }
+
+    @GetMapping("")
+    public ResponseEntity<Api<List<MenuResponse>>> getMenuList() {
+        var data = menuBusiness.getMenuList();
 
         return ResponseEntity
             .ok()
