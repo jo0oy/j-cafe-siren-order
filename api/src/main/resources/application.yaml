@@ -18,7 +18,8 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@localhost:27017/${MONGO_DATABASE}
+      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@localhost:27017/${MONGO_DATABASE}?authSource=admin
+      authentication-database: admin
 
   jpa:
     hibernate:
@@ -27,3 +28,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
