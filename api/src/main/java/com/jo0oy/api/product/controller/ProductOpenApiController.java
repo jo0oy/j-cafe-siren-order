@@ -1,8 +1,8 @@
-package com.jo0oy.api.menu.controller;
+package com.jo0oy.api.product.controller;
 
 import com.jo0oy.api.global.api.Api;
-import com.jo0oy.api.menu.business.MenuBusiness;
-import com.jo0oy.api.menu.dto.response.MenuResponse;
+import com.jo0oy.api.product.business.ProductBusiness;
+import com.jo0oy.api.product.dto.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/open-api/menus")
+@RequestMapping("/open-api/products")
 @RestController
-public class MenuOpenApiController {
+public class ProductOpenApiController {
 
-    private final MenuBusiness menuBusiness;
+    private final ProductBusiness productBusiness;
 
-    @GetMapping("/{menuId}")
-    public ResponseEntity<Api<MenuResponse>> getMenuById(
-        @PathVariable("menuId") String menuId
+    @GetMapping("/{productId}")
+    public ResponseEntity<Api<ProductResponse>> getProductById(
+        @PathVariable("productId") String productId
     ) {
-        var data = menuBusiness.getMenuById(menuId);
+        var data = productBusiness.getProductById(productId);
 
         return ResponseEntity
             .ok()
@@ -33,8 +33,8 @@ public class MenuOpenApiController {
     }
 
     @GetMapping("")
-    public ResponseEntity<Api<List<MenuResponse>>> getMenuList() {
-        var data = menuBusiness.getMenuList();
+    public ResponseEntity<Api<List<ProductResponse>>> getProductList() {
+        var data = productBusiness.getProductList();
 
         return ResponseEntity
             .ok()
