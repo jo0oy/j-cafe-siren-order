@@ -28,3 +28,10 @@ services:
     volumes:
       - ./mongo/data:/data
     restart: always
+
+  cafeorder-redis:
+    container_name: jcafe-order-redis
+    image: redis:6
+    ports:
+      - "6379:6379"
+    restart: always
