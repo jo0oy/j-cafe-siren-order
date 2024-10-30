@@ -37,4 +37,8 @@ public class UserEntity {
         this.password = password;
         this.phoneNumber = phoneNumber;
     }
+
+    public void setEncodedPassword(String encodedPassword) {
+        this.password = encodedPassword;
+    }
 }

@@ -80,8 +80,6 @@ public class OrderBusiness {
     // 주문상품의 옵션 (OrderProductOption) 총 금액 검증 로직
     private void validateOrderProductOptionTotalAmount(OrderProductOptionRequest request) {
         var totalAmount = request.orderProductOptionUnitPrice() * (Objects.nonNull(request.optionTotalCount()) ? request.optionTotalCount() : 1);
-        log.info("주문 옵션명 : {}, 주문 옵션 수량 : {}, 주문 옵션 총 금액 : {}", request.orderProductOptionName(),
-            Objects.nonNull(request.optionTotalCount()) ? request.optionTotalCount() : 1, totalAmount);
 
         if (totalAmount != request.optionTotalAmount()) {
             throw new ApiException(OrderErrorCode.ORDER_INVALID_VALUE, "주문상품옵션 총 금액 입력값이 잘못되었습니다.");
@@ -101,12 +99,8 @@ public class OrderBusiness {
             .mapToInt(OrderProductOptionRequest::optionTotalAmount)
             .sum();
 
-        log.info("상품명 : {}, 모든 옵션 총 금액 : {}, 기본 금액 : {}, 수량 : {}", request.orderProductName(), optionTotalAmount, request.orderProductBasePrice(), request.orderProductTotalCount());
-
         var totalAmount = (request.orderProductBasePrice() + optionTotalAmount) * request.orderProductTotalCount();
-
-        log.info("{} 총 금액 : {}", request.orderProductName(), totalAmount);
-
+        
         if (totalAmount != request.orderProductTotalAmount()) {
             throw new ApiException(OrderErrorCode.ORDER_INVALID_VALUE, "주문상품 총 금액 입력값이 잘못되었습니다.");
         }

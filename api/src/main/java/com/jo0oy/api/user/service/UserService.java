@@ -24,4 +24,10 @@ public class UserService {
         return userRepository.findById(userId)
             .orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
     }
+
+    @Transactional(readOnly = true)
+    public UserEntity getUser(String username) {
+        return userRepository.findByUsername(username)
+            .orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
+    }
 }
